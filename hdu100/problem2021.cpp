@@ -24,28 +24,12 @@
 
 int howMany(int money) {
     int ret = 0;
-    if (money >= 100) {
-        ret += (money / 100);
-        money %= 100;
-    }
-    if (money >= 50) {
-        ret += (money / 50);
-        money %= 50;
-    }
-    if (money >= 10) {
-        ret += (money / 10);
-        money %= 10;
-    }
-    if (money >= 5) {
-        ret += (money / 5);
-        money %= 5;
-    }
-    if (money >= 2) {
-        ret += (money / 2);
-        money %= 2;
-    }
-    if (money >= 1) {
-        ret += (money / 1);
+    int a[6] = {100, 50, 10, 5, 2, 1};
+    for (int i : a) {
+        if (money >= i) {
+            ret += (money / i);
+            money %= i;
+        }
     }
     return ret;
 }

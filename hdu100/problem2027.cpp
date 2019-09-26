@@ -44,41 +44,33 @@
 int main() {
     int n;
     scanf("%d\n", &n);
-    char a[150];
-    int count[n][5];
-    int m = n;
     while (n--) {
-        for (int i = 0; i < 5; i++) {
-            count[n][i] = 0;
-        }
-        gets(a);
-        int len = strlen(a);
+        char s[150];
+        gets(s);
+        int len = strlen(s), a = 0, e = 0, t = 0, o = 0, u = 0;
         for (int i = 0; i < len; i++) {
-            switch (a[i]) {
+            switch (s[i]) {
                 case 'a':
-                    count[n][0]++;
+                    a++;
                     break;
                 case 'e':
-                    count[n][1]++;
+                    e++;
                     break;
                 case 'i':
-                    count[n][2]++;
+                    t++;
                     break;
                 case 'o':
-                    count[n][3]++;
+                    o++;
                     break;
                 case 'u':
-                    count[n][4]++;
+                    u++;
                     break;
             }
         }
-    }
-    for (int i = m - 1; i >= 0; i--) {
-        printf("a:%d\n", count[i][0]);
-        printf("e:%d\n", count[i][1]);
-        printf("i:%d\n", count[i][2]);
-        printf("o:%d\n", count[i][3]);
-        printf("u:%d\n\n", count[i][4]);
+        printf("a:%d\ne:%d\ni:%d\no:%d\nu:%d\n", a, e, t, o, u);
+        if (n > 0) {
+            printf("\n");
+        }
     }
     return 0;
 }

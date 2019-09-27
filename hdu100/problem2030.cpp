@@ -9,7 +9,7 @@
 //
 // Output:
 //     对于每一段文本，输出其中的汉字的个数，每个测试实例的输出占一行。
-//     [Hint:]从汉字机内码的特点考虑~
+//     [Hint:]从汉字机内码的特点考虑~   汉字占 2 个字节，在 MacOS 上占用 3 个字节，每个字节的最高位都是1，因而直接判断是负数即可
 //
 // Sample:
 //
@@ -31,7 +31,7 @@ int main() {
         for (int i = 0; i < len; i++) {
             if (s[i] < 0) {
                 ret++;
-                i++;
+                i++; // if on MacOS，this statement should be i += 2
             }
         }
         printf("%d\n", ret);

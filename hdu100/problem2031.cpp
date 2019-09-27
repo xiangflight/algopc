@@ -16,4 +16,29 @@
 //     23 12    ->     1B
 //      -4 3          -11
 //
+#include <cstdio>
+
+char a[16] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+
+void scale(int n, int m);
+
+int main() {
+    int n, m;
+    while (scanf("%d %d", &n, &m) != EOF) {
+        if (n < 0) {
+            printf("-");
+            n = -n;
+        }
+        scale(n, m);
+        printf("\n");
+    }
+    return 0;
+}
+
+void scale(int n, int m) {
+    if (n > m) {
+        scale(n / m, m);
+    }
+    printf("%c", a[n % m]);
+}
 

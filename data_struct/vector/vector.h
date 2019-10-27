@@ -15,4 +15,9 @@ public:
 
     Rank insert(Rank r, T const& e);
     int remove(Rank lo, Rank hi);
+    T remove(Rank r);
+    Rank find(T const& e, Rank lo, Rank hi) const;
+    int deduplicate();
+    void traverse(void(*)(T& ));
+    template <typename VST> void traverse(VST& );
 };
